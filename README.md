@@ -92,4 +92,4 @@ Python · Pandas · NumPy · SciPy · Statsmodels · Plotly · Streamlit · Jupy
 
 ## Acknowledgements
 
-Inspired by and built upon the work of **Anas Riad**. Portions of the project structure and methodology were adapted from his World Cup prediction project.
+Inspired by and built upon the work of **Anas Riad**. Portions of the project structure were adapted from his World Cup prediction project.
