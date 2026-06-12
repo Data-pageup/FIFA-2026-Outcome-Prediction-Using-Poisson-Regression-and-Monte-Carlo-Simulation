@@ -6,7 +6,6 @@ st.set_page_config(
     layout="wide",
 )
 
-# ── STYLES ──────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
@@ -22,229 +21,137 @@ html, body, [data-testid="stAppViewContainer"] {
     border-right: 1px solid rgba(255,255,255,0.07);
 }
 [data-testid="stSidebar"] * { color: #aaa !important; }
-
-/* remove default top padding */
 .block-container { padding-top: 2.5rem !important; padding-bottom: 4rem !important; }
 
-/* ── hero ── */
 .hero-eyebrow {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: #5DCAA5;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-size: 11px; color: #5DCAA5;
+    letter-spacing: 2px; text-transform: uppercase;
     margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: flex; align-items: center; gap: 8px;
 }
 .hero-eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 24px;
-    height: 1px;
-    background: #5DCAA5;
+    content: ''; display: inline-block;
+    width: 24px; height: 1px; background: #5DCAA5;
 }
 .hero-h1 {
-    font-size: 3.2rem;
-    font-weight: 300;
-    line-height: 1.1;
-    letter-spacing: -1.5px;
-    color: #F0F0F0;
-    margin-bottom: 1rem;
+    font-size: 3.2rem; font-weight: 300;
+    line-height: 1.1; letter-spacing: -1.5px;
+    color: #F0F0F0; margin-bottom: 1rem;
 }
 .hero-h1 strong { font-weight: 600; color: #fff; }
 .hero-desc {
-    font-size: 1rem;
-    color: #888;
-    font-weight: 300;
-    line-height: 1.7;
-    margin-bottom: 0;
-    max-width: 580px;
+    font-size: 1rem; color: #888;
+    font-weight: 300; line-height: 1.7; max-width: 580px;
 }
-
-/* ── stat boxes ── */
 .stat-box {
     background: #141414;
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 1.2rem 1.4rem;
-    text-align: center;
+    border-radius: 12px; padding: 1.2rem 1.4rem; text-align: center;
 }
 .stat-num {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 2rem;
-    font-weight: 500;
-    color: #fff;
-    line-height: 1;
+    font-size: 2rem; font-weight: 500; color: #fff; line-height: 1;
 }
 .stat-lbl {
-    font-size: 10px;
-    color: #555;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-top: 6px;
+    font-size: 10px; color: #555;
+    letter-spacing: 1px; text-transform: uppercase; margin-top: 6px;
 }
-
-/* ── section label ── */
 .sec-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: #555;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    font-size: 10px; color: #555;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem;
 }
 .sec-title {
-    font-size: 1.5rem;
-    font-weight: 400;
-    letter-spacing: -0.4px;
-    color: #fff;
-    margin-bottom: 0.4rem;
+    font-size: 1.5rem; font-weight: 400;
+    letter-spacing: -0.4px; color: #fff; margin-bottom: 0.4rem;
 }
-.sec-sub {
-    font-size: 0.9rem;
-    color: #888;
-    font-weight: 300;
-    margin-bottom: 1.8rem;
-}
-.divider {
-    height: 1px;
-    background: rgba(255,255,255,0.07);
-    margin: 2.5rem 0;
-}
+.sec-sub { font-size: 0.9rem; color: #888; font-weight: 300; margin-bottom: 1.8rem; }
+.divider { height: 1px; background: rgba(255,255,255,0.07); margin: 2.5rem 0; }
 
-/* ── winner band ── */
 .winner-band {
-    background: linear-gradient(135deg, #0d2f24 0%, #0f3d2c 60%, #092820 100%);
-    border: 1px solid rgba(29,158,117,0.35);
-    border-radius: 16px;
-    padding: 2.2rem 2.5rem;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, #1a2a0d 0%, #1e3810 60%, #111f09 100%);
+    border: 1px solid rgba(99,153,34,0.4);
+    border-radius: 16px; padding: 2.2rem 2.5rem;
+    display: flex; align-items: center; gap: 2rem;
+    margin-bottom: 1.5rem; position: relative; overflow: hidden;
 }
 .winner-tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #5DCAA5;
-    margin-bottom: 6px;
-    display: block;
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+    color: #97C459; margin-bottom: 6px; display: block;
 }
 .winner-name { font-size: 2rem; font-weight: 500; color: #fff; letter-spacing: -0.5px; margin-bottom: 4px; }
-.winner-meta { font-size: 13px; color: rgba(93,202,165,0.65); }
+.winner-meta { font-size: 13px; color: rgba(151,196,89,0.65); }
 .winner-prob {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 2.8rem;
-    font-weight: 500;
-    color: #5DCAA5;
-    margin-left: auto;
-    flex-shrink: 0;
+    font-size: 2.8rem; font-weight: 500;
+    color: #97C459; margin-left: auto; flex-shrink: 0;
 }
-.winner-prob small { font-size: 0.9rem; color: #1D9E75; margin-left: 3px; }
+.winner-prob small { font-size: 0.9rem; color: #639922; margin-left: 3px; }
 
-/* ── team rows ── */
 .team-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 11px 16px;
-    background: #141414;
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 16px; background: #141414;
     border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 10px;
-    margin-bottom: 7px;
-    transition: border-color 0.2s;
+    border-radius: 10px; margin-bottom: 7px;
 }
-.team-row:hover { border-color: rgba(255,255,255,0.15); }
 .t-rank { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #444; width: 18px; text-align: right; flex-shrink: 0; }
 .t-flag { font-size: 18px; flex-shrink: 0; }
-.t-name { font-size: 13px; font-weight: 500; color: #F0F0F0; width: 100px; flex-shrink: 0; }
+.t-name { font-size: 13px; font-weight: 500; color: #F0F0F0; width: 110px; flex-shrink: 0; }
 .t-conf { font-size: 9px; padding: 2px 8px; border-radius: 20px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.5px; flex-shrink: 0; }
 .t-track { flex: 1; height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; overflow: hidden; }
 .t-fill { height: 100%; border-radius: 2px; }
-.t-prob { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; color: #F0F0F0; width: 38px; text-align: right; flex-shrink: 0; }
+.t-prob { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; color: #F0F0F0; width: 42px; text-align: right; flex-shrink: 0; }
 
-/* ── step rows ── */
 .step {
-    display: flex;
-    gap: 18px;
-    align-items: flex-start;
-    padding: 1.4rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex; gap: 18px; align-items: flex-start;
+    padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .step:last-child { border-bottom: none; }
 .step-icon {
-    width: 40px; height: 40px;
-    border-radius: 10px;
+    width: 40px; height: 40px; border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
     font-size: 18px; flex-shrink: 0;
 }
 .step-title { font-size: 14px; font-weight: 500; color: #fff; margin-bottom: 4px; }
 .step-desc { font-size: 12px; color: #888; line-height: 1.6; }
 .step-tag {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    padding: 2px 8px;
-    border-radius: 4px;
-    border: 1px solid;
-    margin-top: 8px;
+    display: inline-block; font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; padding: 2px 8px; border-radius: 4px;
+    border: 1px solid; margin-top: 8px;
 }
 
-/* ── pipe cards ── */
 .pipe-card {
-    background: #141414;
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 12px;
-    padding: 1.2rem;
-    height: 100%;
+    background: #141414; border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px; padding: 1.2rem; height: 100%;
 }
 .pipe-icon { font-size: 20px; margin-bottom: 10px; display: block; }
 .pipe-title { font-size: 13px; font-weight: 500; color: #fff; margin-bottom: 5px; }
 .pipe-desc { font-size: 11px; color: #888; line-height: 1.5; }
 
-/* ── tech chips ── */
 .tech-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .tech-chip {
-    font-size: 12px;
-    padding: 6px 14px;
-    border-radius: 8px;
-    background: #141414;
-    border: 1px solid rgba(255,255,255,0.08);
-    color: #888;
+    font-size: 12px; padding: 6px 14px; border-radius: 8px;
+    background: #141414; border: 1px solid rgba(255,255,255,0.08); color: #888;
 }
-
-/* ── footer ── */
 .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.07);
-    margin-top: 3rem;
-    flex-wrap: wrap;
-    gap: 1rem;
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07);
+    margin-top: 3rem; flex-wrap: wrap; gap: 1rem;
 }
 .footer-left { font-size: 12px; color: #444; }
 .footer-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    padding: 5px 12px;
-    border-radius: 6px;
-    border: 1px solid rgba(29,158,117,0.3);
-    color: #5DCAA5;
-    background: rgba(29,158,117,0.06);
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    padding: 5px 12px; border-radius: 6px;
+    border: 1px solid rgba(99,153,34,0.3);
+    color: #97C459; background: rgba(99,153,34,0.06);
 }
 </style>
 """, unsafe_allow_html=True)
 
 
-# ── HERO ────────────────────────────────────────────────────────────────────
+# ── HERO ─────────────────────────────────────────────────────────────────────
 st.markdown('<div class="hero-eyebrow">FIFA World Cup 2026 — Forecasting Project</div>', unsafe_allow_html=True)
 st.markdown("""
 <div class="hero-h1">Predicting the<br><strong>World Cup winner</strong><br>with data.</div>
@@ -256,7 +163,6 @@ and Monte Carlo simulation to forecast every stage of the 2026 tournament across
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
-# ── HERO STATS ───────────────────────────────────────────────────────────────
 c1, c2, c3, c4 = st.columns(4)
 for col, num, lbl in [
     (c1, "1,000", "Simulated tournaments"),
@@ -265,16 +171,12 @@ for col, num, lbl in [
     (c4, "6",     "Tournament stages"),
 ]:
     with col:
-        st.markdown(f"""
-        <div class="stat-box">
-            <div class="stat-num">{num}</div>
-            <div class="stat-lbl">{lbl}</div>
-        </div>""", unsafe_allow_html=True)
+        st.markdown(f'<div class="stat-box"><div class="stat-num">{num}</div><div class="stat-lbl">{lbl}</div></div>', unsafe_allow_html=True)
 
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 
-# ── WINNER ───────────────────────────────────────────────────────────────────
+# ── WINNER ────────────────────────────────────────────────────────────────────
 st.markdown('<div class="sec-label">Simulation output</div>', unsafe_allow_html=True)
 st.markdown('<div class="sec-title">Who wins the World Cup?</div>', unsafe_allow_html=True)
 st.markdown('<div class="sec-sub">Based on 1,000 full Monte Carlo tournament runs. Win % = fraction of simulations where each team lifts the trophy.</div>', unsafe_allow_html=True)
@@ -284,33 +186,42 @@ st.markdown("""
     <div style="font-size:3rem; flex-shrink:0;">🏆</div>
     <div>
         <span class="winner-tag">Predicted champion</span>
-        <div class="winner-name">🇫🇷 France</div>
-        <div class="winner-meta">UEFA &nbsp;·&nbsp; Elo rank #1 &nbsp;·&nbsp; Consistent semi-final performer</div>
+        <div class="winner-name">🇪🇸 Spain</div>
+        <div class="winner-meta">UEFA &nbsp;·&nbsp; FIFA rank #2 &nbsp;·&nbsp; Elo 2229 — highest rated team in the tournament</div>
     </div>
-    <div class="winner-prob">~21%<small>win prob</small></div>
+    <div class="winner-prob">26.9%<small>win prob</small></div>
 </div>
 """, unsafe_allow_html=True)
 
+# Real data from CSV, top 12
 teams = [
-    ("🇫🇷", "France",    "UEFA",     21, "#3D7EF0"),
-    ("🇧🇷", "Brazil",    "CONMEBOL", 17, "#1D9E75"),
-    ("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "England",   "UEFA",     14, "#E24B4A"),
-    ("🇦🇷", "Argentina", "CONMEBOL", 13, "#8B7EDD"),
-    ("🇪🇸", "Spain",     "UEFA",     11, "#F0A030"),
-    ("🇩🇪", "Germany",   "UEFA",      8, "#888888"),
-    ("🇵🇹", "Portugal",  "UEFA",      6, "#1D9E75"),
-    ("🇧🇪", "Belgium",   "UEFA",      4, "#E24B4A"),
+    ("🇪🇸", "Spain",       "UEFA",     26.9, "#639922"),
+    ("🇦🇷", "Argentina",   "CONMEBOL", 18.2, "#8B7EDD"),
+    ("🇫🇷", "France",      "UEFA",     11.6, "#3D7EF0"),
+    ("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "England",    "UEFA",      6.9, "#E24B4A"),
+    ("🇧🇷", "Brazil",      "CONMEBOL",  4.9, "#1D9E75"),
+    ("🇨🇴", "Colombia",    "CONMEBOL",  4.1, "#F0A030"),
+    ("🇳🇱", "Netherlands", "UEFA",      3.8, "#F0A030"),
+    ("🇩🇪", "Germany",     "UEFA",      2.9, "#888888"),
+    ("🇪🇨", "Ecuador",     "CONMEBOL",  2.8, "#5DCAA5"),
+    ("🇵🇹", "Portugal",    "UEFA",      2.6, "#3D7EF0"),
+    ("🇭🇷", "Croatia",     "UEFA",      2.4, "#E24B4A"),
+    ("🇲🇦", "Morocco",     "CAF",       2.1, "#F0A030"),
 ]
 
 conf_style = {
     "UEFA":     ("rgba(61,126,240,0.12)",  "#3D7EF0"),
-    "CONMEBOL": ("rgba(29,158,117,0.12)", "#1D9E75"),
+    "CONMEBOL": ("rgba(139,126,221,0.12)", "#8B7EDD"),
+    "CAF":      ("rgba(240,160,48,0.12)",  "#F0A030"),
+    "AFC":      ("rgba(93,202,165,0.12)",  "#5DCAA5"),
+    "CONCACAF": ("rgba(226,75,74,0.12)",   "#E24B4A"),
 }
 
 rows_html = ""
+max_prob = 26.9
 for i, (flag, name, conf, prob, color) in enumerate(teams):
-    bg, tc = conf_style[conf]
-    pct = round((prob / 21) * 100)
+    bg, tc = conf_style.get(conf, ("rgba(255,255,255,0.06)", "#888"))
+    pct = round((prob / max_prob) * 100)
     rows_html += f"""
     <div class="team-row">
         <span class="t-rank">{i+1}</span>
@@ -325,7 +236,7 @@ st.markdown(rows_html, unsafe_allow_html=True)
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 
-# ── METHODOLOGY ──────────────────────────────────────────────────────────────
+# ── METHODOLOGY ───────────────────────────────────────────────────────────────
 st.markdown('<div class="sec-label">Methodology</div>', unsafe_allow_html=True)
 st.markdown('<div class="sec-title">How the model works</div>', unsafe_allow_html=True)
 st.markdown('<div class="sec-sub">A six-stage pipeline from raw match data to tournament probability estimates.</div>', unsafe_allow_html=True)
@@ -341,7 +252,7 @@ steps = [
      "TEAM STRENGTH"),
     ("⚙️", "#F0A030", "rgba(240,160,48,0.12)",
      "Feature engineering",
-     "Match-level features constructed: home/away Elo, Elo delta, neutral venue flag, tournament importance weight, confederation encoding. These become model inputs.",
+     "Match-level features constructed: home/away Elo, Elo delta, neutral venue flag, tournament importance weight, confederation encoding.",
      "INPUT FEATURES"),
     ("∫", "#1D9E75", "rgba(29,158,117,0.12)",
      "Poisson regression — xG models",
@@ -361,7 +272,7 @@ steps_html = ""
 for emoji, color, bg, title, desc, tag in steps:
     steps_html += f"""
     <div class="step">
-        <div class="step-icon" style="background:{bg}; font-size:20px;">{emoji}</div>
+        <div class="step-icon" style="background:{bg};">{emoji}</div>
         <div style="flex:1;">
             <div class="step-title">{title}</div>
             <div class="step-desc">{desc}</div>
@@ -373,7 +284,7 @@ st.markdown(steps_html, unsafe_allow_html=True)
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 
-# ── PIPELINE CARDS ────────────────────────────────────────────────────────────
+# ── PIPELINE ──────────────────────────────────────────────────────────────────
 st.markdown('<div class="sec-label">Prediction pipeline</div>', unsafe_allow_html=True)
 st.markdown('<div class="sec-title">Core components</div>', unsafe_allow_html=True)
 st.markdown('<div class="sec-sub">Each component feeds directly into the next, forming a coherent forecasting chain.</div>', unsafe_allow_html=True)
@@ -384,7 +295,7 @@ pipes = [
     ("🔧", "#F0A030", "Feature matrix",           "Elo, venue, confederation, importance — engineered per match"),
     ("∫",  "#1D9E75", "xG Poisson models",        "Trained home + away goal expectation models"),
     ("↔️", "#E24B4A", "Outcome probabilities",    "Win / draw / loss odds for any head-to-head"),
-    ("🏆", "#5DCAA5", "Tournament probabilities", "Monte Carlo win rates per stage, per team"),
+    ("🏆", "#639922", "Tournament probabilities", "Monte Carlo win rates per stage, per team"),
 ]
 
 cols = st.columns(3)
@@ -402,7 +313,7 @@ for i, (icon, color, title, desc) in enumerate(pipes):
 st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
 
-# ── TECH STACK ────────────────────────────────────────────────────────────────
+# ── TECH ──────────────────────────────────────────────────────────────────────
 st.markdown('<div class="sec-label">Technologies</div>', unsafe_allow_html=True)
 st.markdown('<div class="sec-title">Stack</div>', unsafe_allow_html=True)
 
