@@ -1,4 +1,4 @@
-# FIFA World Cup 2026 Prediction Project
+# FIFA 2026 Outcome Prediction Using Poisson Regression and Monte Carlo Simulation
 
 ## Overview
 
